@@ -72,6 +72,8 @@ class _NumberSlideAnimationState extends State<NumberSlideAnimation> {
       mainAxisSize: MainAxisSize.min,
       key: _rowKey,
       children: List.generate(widget.number.length, (position) {
+        if (position >= 5 && position <= 7)
+          return Text('x', style: widget.textStyle!.copyWith(height: 1.0),);
         return NumberCol(
           animateTo: int.parse(widget.number[position]),
           textStyle: widget.textStyle,
